@@ -17,9 +17,9 @@ function limpar() {
 
 async function salvar() {
   if (acessorio.id) {
-    await acessoriosApi.atualizarCategoria(acessorio);
+    await acessoriosApi.atualizarAcessorio(acessorio);
   } else {
-    await acessoriosApi.adicionarCategoria(acessorio);
+    await acessoriosApi.adicionarAcessorio(acessorio);
   }
   acessorios.value = await acessoriosApi.buscarTodosOsAcessorios();
   limpar();
@@ -30,7 +30,7 @@ function editar(acessorio_para_editar) {
 }
 
 async function excluir(id) {
-  await acessoriosApi.excluirCategoria(id);
+  await acessoriosApi.excluirAcessorio(id);
   acessorios.value = await acessoriosApi.buscarTodosOsAcessorios();
   limpar();
 }
